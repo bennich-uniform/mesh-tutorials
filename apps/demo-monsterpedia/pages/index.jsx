@@ -7,7 +7,6 @@ import { useLivePreviewNextStaticProps } from "../hooks/useLivePreviewNextStatic
 import FeaturedMonster from "../src/components/FeaturedMonster";
 
 export async function getStaticProps({ preview }) {
-  console.log("BBB", preview ? CANVAS_DRAFT_STATE : CANVAS_PUBLISHED_STATE)
   const client = new CanvasClient({
     apiKey: process.env.UNIFORM_API_KEY,
     projectId: process.env.UNIFORM_PROJECT_ID,
