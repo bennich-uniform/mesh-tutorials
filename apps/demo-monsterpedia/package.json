@@ -1,0 +1,27 @@
+{
+  "name": "demo-monsterpedia",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "verify-env": "node lib/verify-env.js",
+    "dev": "next dev -p 4040",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@uniformdev/canvas": "^15.0.0",
+    "@uniformdev/canvas-react": "^15.0.0",
+    "canvas-monsterpedia": "*",
+    "chart.js": "^3.7.1",
+    "next": "12.1.5",
+    "react": "17.0.2",
+    "react-chartjs-2": "^4.1.0",
+    "react-dom": "17.0.2"
+  },
+  "devDependencies": {
+    "dotenv": "^16.0.0",
+    "eslint": "8.13.0",
+    "eslint-config-next": "12.1.5"
+  }
+}
