@@ -7,8 +7,7 @@ import { createClient } from "canvas-monsterpedia";
 
 export default function MonsterListParameterEditor() {
   const { value, setValue, metadata } = useUniformMeshLocation();
-  const { parameterDefinition, settings } = metadata;
-  const { url } = metadata;
+  const { parameterDefinition } = metadata;
   const { name, typeConfig } = parameterDefinition;
   const { filter } = typeConfig || {};
   const [monsters, setMonsters] = useState();

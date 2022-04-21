@@ -3,6 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "download:manifest": "uniform context manifest download --output ./lib/contextManifest.json",
+    "canvas:pull": "uniform canvas component pull ./canvas/demo-monsterpedia.yaml && uniform canvas composition pull ./canvas/demo-monsterpedia.yaml",
+    "canvas:push": "uniform canvas component push ./canvas/demo-monsterpedia.yaml && uniform canvas composition push ./canvas/demo-monsterpedia.yaml",
     "verify-env": "node lib/verify-env.js",
     "dev": "next dev -p 4040",
     "build": "next build",
@@ -12,6 +15,9 @@
   "dependencies": {
     "@uniformdev/canvas": "^15.0.0",
     "@uniformdev/canvas-react": "^15.0.0",
+    "@uniformdev/cli": "^15.0.0",
+    "@uniformdev/context": "^15.0.0",
+    "@uniformdev/context-react": "^15.0.0",
     "canvas-monsterpedia": "*",
     "chart.js": "^3.7.1",
     "next": "12.1.5",

@@ -1,15 +1,15 @@
-import Head from "next/head";
-import styles from "../styles/Home.module.css";
-import { CanvasClient } from "@uniformdev/canvas";
-import { enhance, EnhancerBuilder, CANVAS_DRAFT_STATE, CANVAS_PUBLISHED_STATE } from "@uniformdev/canvas";
+import { CanvasClient, enhance, EnhancerBuilder, CANVAS_DRAFT_STATE, CANVAS_PUBLISHED_STATE } from "@uniformdev/canvas";
+import { Composition } from "@uniformdev/canvas-react";
+import LandingPageLayout from "../src/components/LandingPageLayout";
+import resolveRenderer from "../lib/resolveRenderer";
+
 import { createClient, CANVAS_MONSTER_LIST_PARAMETER_TYPES, createMonsterEnhancer } from "canvas-monsterpedia";
 import { useLivePreviewNextStaticProps } from "../hooks/useLivePreviewNextStaticProps";
-import FeaturedMonster from "../src/components/FeaturedMonster";
 
 export async function getStaticProps({ preview }) {
   const client = new CanvasClient({
     apiKey: process.env.UNIFORM_API_KEY,
-    projectId: process.env.UNIFORM_PROJECT_ID,
+    projectId: process.env.NEXT_PUBLIC_UNIFORM_PROJECT_ID,
   });
   const { composition } = await client.getCompositionBySlug({
     slug: "/",
@@ -30,28 +30,15 @@ export async function getStaticProps({ preview }) {
   };
 }
 
-export default function Home({composition}) {
-  const { parameters } = composition;
-  const { featuredMonster, pageName } = parameters;
-  const { value } = featuredMonster;
-
+export default function Home({ composition }) {
   useLivePreviewNextStaticProps({
     compositionId: composition._id,
-    projectId: process.env.UNIFORM_PROJECT_ID,
+    projectId: process.env.NEXT_PUBLIC_UNIFORM_PROJECT_ID,
   });
 
   return (
-    <div className={styles.container}>
-      <Head>
-        <title>Demo Monsterpedia</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
-      <main>
-        <h1>{pageName.value}</h1>
-        <FeaturedMonster monster={value} />
-      </main>
-
-    </div>
+    <Composition data={composition} resolveRenderer={resolveRenderer}>
+      <LandingPageLayout composition={composition} />
+    </Composition>
   );
 }

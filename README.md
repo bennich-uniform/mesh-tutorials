@@ -69,13 +69,10 @@
       "baseLocationUrl": "https://github-######--4030.local.webcontainer.io"
     }
     ```
-
-1. In Canvas, create a composition component with the following:
-    * Parameter with the id **pageTitle**
-    * Parameter with the id **featuredMonster**
-
-1. In Canvas, create a composition with the following:
-    * Slug: **/**
+1. In the terminal, enter the following command:
+    ```
+    npm run dev:push
+    ```
 
 1. Now you can preview the site from Canvas.
 
