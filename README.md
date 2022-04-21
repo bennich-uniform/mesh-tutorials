@@ -2,6 +2,10 @@
 
 ## Setup (StackBlitz)
 
+1. In Uniform, create a new project.
+
+1. Create a new API key with access to Canvas.
+
 1. Open [StackBlitz](https://stackblitz.com/github/adamconn/mesh-tutorials?file=apps%2Fdemo-monsterpedia%2F.env)
 
 1. After you open StackBlitz you will see an error in the terminal that environment variables are not set. You must set the variables in `apps\demo-monsterpedia\.env`.
@@ -17,11 +21,7 @@
     * **4030** is the Uniform integration configuration app
     * **4040** is the demo site
 
-1. In Uniform, create a new project.
-
-1. Create a new API key with access to Canvas.
-
-1. Navigate to **Settings > Canvas Settings**
+1. In Uniform, navigate to **Settings > Canvas Settings**
 
 1. Set the **Preview URL** to `https://github-######--4040.local.webcontainer.io/api/preview?secret=monster-secret`
     > The secret can be changed in `apps\demo-monsterpedia\.env`.
